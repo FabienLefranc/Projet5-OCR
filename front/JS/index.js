@@ -43,5 +43,19 @@ function displayAllProducts(products) {
         `  
     }
 }
-
 callUrl();
+
+function displayResponsive() {
+    const allCross = document.querySelectorAll('.navbar-toggler-icon img');
+
+    for (const cross of allCross){
+        cross.addEventListener('click', function(){
+            if(this.src.includes('plus')){
+                this.src = './front/images/minus.png';
+            } else if (this.src.includes('minus')) {
+                this.src = './front/images/plus.png';
+            }
+        })
+    }
+}
+displayResponsive();

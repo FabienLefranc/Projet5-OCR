@@ -186,4 +186,17 @@ displayCart();
         addNumberProduct();      
     }
 
-  
+    function displayResponsive() {
+        const allCross = document.querySelectorAll('.navbar-toggler-icon img');
+      
+        for (const cross of allCross){
+            cross.addEventListener('click', function(){
+                if(this.src.includes('plus')){
+                    this.src = '../images/minus.png';
+                } else if (this.src.includes('minus')) {
+                    this.src = '../images/plus.png';
+                }
+            })
+        }
+      }
+      displayResponsive();   
