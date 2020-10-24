@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site e-commerce ~ Orinoco ~ vente en ligne d'objets anciens</title>
+    <meta
+      name="Orinoco"
+      content="Site de vente en ligne - spécialiste des objets anciens et vintage"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js" ></script>
+    <!-- <link rel="stylesheet" href="../front/style.css" /> -->
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <img src="../images/logo.PNG" alt="Logo du site Orinoco" />
+      </div>
+      <div class="title">
+        <h1>Orinoco</h1>
+        <h2>
+          Spécialiste de la vente<br />
+          en ligne d'objets anciens
+        </h2>
+      </div>
+    </header>
+    <main>
+      <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.html">Orinoco</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"
+              ><img src="../images/plus.png" alt="logo croix"
+            /></span>
+          </button>
+          <div
+            class="collapse navbar-collapse float-right"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="../../index.html"
+                  >Accueil <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:orinoco@gmail.com">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="basket.html"
+                  ><span class="fa fa-cart-arrow-down"></span> Panier
+                  <span class="addNumberProduct"></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- PANIER -->
+
+          <section id="cart"></section>        
+          <div id="cartTotal"></div>            
+          <div class="validationFinalCart">
+              <button type="button" class="continue"><a href="../../index.html"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+              </svg>Continuer vos achats</a></button>    
+              <button type="button" class="validate"><a href="#formulaire">Valider votre panier</a></button>   
+          </div>             
+        
+
+        <!--FORMULAIRE -->
+
+
+	<div class="container">
+		<form class="formulaire" action="post">
+      <h4 class="inscription text-center" id="formulaire">Inscrivez-vous</h4>
+          <div class="form-row col-md-10">
+						<div class="col col-md-6">
+							<label for="firstName">Prénom : </label>
+              <input class="form-control" type="text" id="firstName" name="firstName" placeholder="Votre prénom" pattern="[a-zA-Z]{1,35}" required>                            							
+						</div>
+						<div class="col col-md-6">
+							<label for="lastName">Nom : </label>
+              <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Votre nom" pattern="[a-zA-Z]{1,35}" required>             
+            </div>
+          </div>
+						<div class="form-group col-md-10">
+							<label for="address">Adresse : </label>
+              <input class="form-control" type="text" id="address" name="address" placeholder="Votre adresse" required>                       
+            </div>                
+            <div class="form-group col-md-10"><label for="city">Ville : </label>
+              <input class="form-control" type="text" id="city" name="city" placeholder="Votre ville" pattern="[a-zA-Z]{1,50}" required >                         
+            </div>            
+            <div class="form-group col-md-10"><label for="email">Email : </label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="exemple@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </div> 
+            <div id="error"></div>
+      <input class="form-control col-md-3 mx-auto" type="submit" id="submitCartValidation" value="Valider vos achats">
+  	</form>
+	</div>
+      
+    </main>
+
+    <footer>
+      <img src="../images/logo.PNG" alt="Logo du site Orinoco" />
+      <p>Site de ventes en ligne d'objets anciens</p>
+    </footer>
+
+    
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- lien vers page javascript -->
+    <script src="../JS/basket.js"></script>
+    <script src="../JS/form.js"></script>
+    <script src="../JS/confirmation.js"></script>     
+    <script src="../JS/addBasketNumber.js"></script>     
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
