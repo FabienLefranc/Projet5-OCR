@@ -1,36 +1,25 @@
-// /* ----- Imports ----- */
 
-// import displayCart from 'basket';
-// displayCart();
+/* Appel de l'Url */
 
-// import addNumberProduct from 'addBasketNumber';
-// addNumberProduct();
+function callUrl () {    
+    // Variable de l'URL
 
-// import confirmation from 'confirmation';
-// confirmation();
+    const url ="http://localhost:3000/api/teddies";
 
-// import form from 'form';
-// form();
+    /* Demande Fetch concernant les teddies de l'API */
 
-// import callAPI from 'product';
-// callAPI();
+        fetch(url)
+            .then((response) => response.json()) //Attente d'une promesse de l'API
+            .then(products => {
+                if(products){
+                    console.log(products);
+                    displayAllProducts(products);
+                } else { //Message si aucune connexion à l'url
+                alert ("La connexion au serveur ne s'est pas faite, veuillez réessayer plus tard..."); 
+                }
+            }) 
+}
 
-// Variable de l'URL
-
-const url ="http://localhost:3000/api/teddies";
-
-/* Demande Fetch concernant les teddies de l'API */
-
-    fetch(url)
-        .then((response) => response.json()) //Attente d'une promesse de l'API
-        .then(products => {
-            if(products){
-                console.log(products);
-                displayAllProducts(products);
-            } else { //Message si aucune connexion à l'url
-            alert ("La connexion au serveur ne s'est pas faite, veuillez réessayer plus tard..."); 
-            }
-        }) 
      
 /* Affichage de tous les teddies sur la page index.html */
 
@@ -54,3 +43,5 @@ function displayAllProducts(products) {
         `  
     }
 }
+
+callUrl();
