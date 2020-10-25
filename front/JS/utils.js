@@ -15,7 +15,13 @@ function addNumberProduct() {
     
     addNumber.innerHTML = `<sup>${nbre}</sup>`;
 }
-
 addNumberProduct();
+
+
+
+
+function error() {
+    alert("La connexion au serveur est indisponible, veuillez réessayer plus tard ...");
+}
 
 

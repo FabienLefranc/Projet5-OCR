@@ -45,15 +45,14 @@ est cliqué */
             .then (res => res.json())
             .then (res => {
                 console.log(res);
-                if(res) {
-                    let commande = JSON.stringify(res); //Retour des données de l'API
-                    localStorage.setItem("commande", commande); //Création d'un nouveau fichier dans le localStorage avec les données retournées par l'API
-                    location.href = "./confirmation.html";
-                } else {
-                    alert ("La connexion au serveur ne s'est pas faite, veuillez réessayer plus tard..."); 
-                }            
+                let commande = JSON.stringify(res); //Retour des données de l'API
+                localStorage.setItem("commande", commande); //Création d'un nouveau fichier dans le localStorage avec les données retournées par l'API
+                location.href = "./confirmation.html";
             }) 
-        } 
+            .catch (e => error());
+        } else {
+            error();
+        }
     })
 }
 

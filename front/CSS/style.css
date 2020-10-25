@@ -477,6 +477,7 @@ table{
 .trHead{
   width: 100%;
   max-width: 850px;
+  min-width: 425px;
   border-bottom: 2px solid lightgrey;
 }
 .th1{
@@ -497,6 +498,7 @@ table{
 .trArticles {
   width: 100%;
   max-width: 850px;
+  min-width: 425px;
   border-bottom: 1px solid lightgrey;
 }
 .tdArticle {

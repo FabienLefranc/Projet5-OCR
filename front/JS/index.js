@@ -3,21 +3,16 @@
 
 function callUrl () {    
     // Variable de l'URL
-
     const url ="http://localhost:3000/api/teddies";
-
     /* Demande Fetch concernant les teddies de l'API */
-
+    
         fetch(url)
             .then((response) => response.json()) //Attente d'une promesse de l'API
             .then(products => {
-                if(products){
-                    console.log(products);
-                    displayAllProducts(products);
-                } else { //Message si aucune connexion à l'url
-                alert ("La connexion au serveur ne s'est pas faite, veuillez réessayer plus tard..."); 
-                }
-            }) 
+                console.log(products);
+                displayAllProducts(products);
+            })    
+            .catch (e => error());
 }
 
      
@@ -44,18 +39,6 @@ function displayAllProducts(products) {
     }
 }
 callUrl();
+addNumberProduct();
 
-function displayResponsive() {
-    const allCross = document.querySelectorAll('.navbar-toggler-icon img');
 
-    for (const cross of allCross){
-        cross.addEventListener('click', function(){
-            if(this.src.includes('plus')){
-                this.src = './front/images/minus.png';
-            } else if (this.src.includes('minus')) {
-                this.src = './front/images/plus.png';
-            }
-        })
-    }
-}
-displayResponsive();

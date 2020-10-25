@@ -18,14 +18,11 @@ function callAPI() {
   fetch(url+"/"+id)
     .then((response) => response.json())
     .then(product => {
-      if(product){
-        displayProduct(product);
-      } else {  //Message si aucune connexion à l'url
-        alert ("La connexion au serveur ne s'est pas faite, veuillez réessayer plus tard..."); 
-      }
+      console.log(product);
+      displayProduct(product);
     })
+    .catch (e => error());
 }
-
 callAPI();
 
 // Affichage du produit sélectionné
@@ -122,17 +119,5 @@ function addToCart (product) {
   addNumberProduct();
 }
 
-function displayResponsive() {
-  const allCross = document.querySelectorAll('.navbar-toggler-icon img');
 
-  for (const cross of allCross){
-      cross.addEventListener('click', function(){
-          if(this.src.includes('plus')){
-              this.src = '../images/minus.png';
-          } else if (this.src.includes('minus')) {
-              this.src = '../images/plus.png';
-          }
-      })
-  }
-}
-displayResponsive();
+addNumberProduct();
