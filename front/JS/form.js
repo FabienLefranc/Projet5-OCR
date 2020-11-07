@@ -49,9 +49,9 @@ est cliqué */
                 localStorage.setItem("commande", commande); //Création d'un nouveau fichier dans le localStorage avec les données retournées par l'API
                 location.href = "./confirmation.html";
             }) 
-            .catch (e => error());
+            .catch (e => errorCommande());
         } else {
-            error();
+            errorConnexion();
         }
     })
 }

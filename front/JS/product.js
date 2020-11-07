@@ -8,9 +8,7 @@ function callAPI() {
   //Récupération de la variable contenant l'id du produit sélectionné 
 
   const parameters = new URLSearchParams(window.location.search);
-  const id = parameters.get("id");
-
-  const section = document.querySelector(".displayTeddy");
+  const id = parameters.get("id");  
 
   /*Appel de la méthode Fetch pour récupérer l'url et l'ID 
   d'un seul Teddy */
@@ -21,7 +19,7 @@ function callAPI() {
       console.log(product);
       displayProduct(product);
     })
-    .catch (e => error());
+    .catch (e => errorProduit());
 }
 callAPI();
 
@@ -119,5 +117,3 @@ function addToCart (product) {
   addNumberProduct();
 }
 
-
-addNumberProduct();

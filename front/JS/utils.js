@@ -18,10 +18,16 @@ function addNumberProduct() {
 addNumberProduct();
 
 
-
-
-function error() {
+function errorProduit() {
+    alert("La connexion aux différents produits est indisponible, veuillez réessayer plus tard ...");
+}
+function errorConnexion() {
     alert("La connexion au serveur est indisponible, veuillez réessayer plus tard ...");
 }
+function errorCommande() {
+    alert("Désolé, la connexion à votre banque a échoué, veuillez réessayer plus tard ...");
+}
+
+
 
 

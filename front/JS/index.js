@@ -12,7 +12,7 @@ function callUrl () {
                 console.log(products);
                 displayAllProducts(products);
             })    
-            .catch (e => error());
+            .catch (e => errorProduit());
 }
 
      
@@ -22,7 +22,7 @@ function displayAllProducts(products) {
     const productList = document.getElementById("productList");
 
     for (const product of products){
-        console.log(product);
+        // console.log(product);
 
         // On crée une section au niveau de l'html
         const section = document.createElement("section");
@@ -37,8 +37,8 @@ function displayAllProducts(products) {
         En savoir plus...</a></button></div>
         `  
     }
+
 }
 callUrl();
-addNumberProduct();
 
 

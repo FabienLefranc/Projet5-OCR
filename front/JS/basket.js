@@ -2,7 +2,7 @@
 
 function displayCart() {
     //Variables
-    const cart = document.getElementById("cart"); // Lier l'id "cart" avec JS
+    const cart = document.querySelector("#cart"); // Lier l'id "cart" avec JS
 
     if (localStorage.getItem("cartProducts") !== null) {
         let products = JSON.parse(localStorage.getItem("cartProducts"));
@@ -78,14 +78,13 @@ function displayCart() {
 
         for (const btn of btnAddQuantity) {
             btn.addEventListener("click", (e) =>{
-                addOneQuantity(e,products);
+                addOneQuantity(e, products);
             })
         }       
             
-    } else { // Si le panier est vide :  
-        cart.innerHTML = `
-        <p class="emptyText">Le panier est vide.</p>
-        `;
+    } else { // Si le panier est vide :       
+        
+        cart.innerHTML = `<p class="emptyText">Le panier est vide.</p>`;
         const formulaire = document.querySelector("form");
         const validate = document.querySelector(".validate");
         const cartTotal = document.getElementById("cartTotal"); 
@@ -104,7 +103,6 @@ function displayCart() {
     })
 }
 
-displayCart();
 
     /* ------ CREATION DES FONCTIONS ------ */
 
@@ -133,13 +131,13 @@ displayCart();
         let index = e.target.classList[2].slice(-1);//On sélectionne le numéro de l'index
         // console.log(index);
         products.splice(index, 1); //On retire le produit à l'index sélectionné du tableau "products"
-        localStorage.setItem("cartProducts", JSON.stringify(products));//On modifie également le localStorage
-        window.location.reload(); 
+        localStorage.setItem("cartProducts", JSON.stringify(products));//On modifie également le localStorage        
 
         if (products.length === 0) { //si le tableau "products" est vide 
             localStorage.removeItem("cartProducts"); //On vide le localStorage
-        }        
-        refreshSectionAndCart();
+        }       
+        
+        window.location.reload(); 
     }
 
     /* ----- Création de la fonction qui supprime une quantité ------ */
@@ -161,8 +159,9 @@ displayCart();
         } else { //si la quantité du produit n'est pas nulle, on modifie le localStorage
             localStorage.setItem("cartProducts", JSON.stringify(products));
         }
+       
         window.location.reload(); 
-        refreshSectionAndCart(); //On rafraichït la fenêtre et le panier
+        
     }
 
     /* ----- Création de la fonction qui ajoute une quantité ----- */
@@ -173,17 +172,10 @@ displayCart();
         products[index].quantity++; //on ajoute +1 à la quantité. 
 
         localStorage.setItem("cartProducts", JSON.stringify(products)); //On modifie le localStorage
+       
         window.location.reload(); 
-        refreshSectionAndCart(); //On rafraichït la fenêtre et le panier
     }
-
-    /*Création de la fonction qui réinitialise le panier ainsi 
-    que le nombre de produit dans la navbar */
-
-    function refreshSectionAndCart(){
-        cart.innerHTML = ``;
-        displayCart();
-        addNumberProduct();      
-    }
+    
+displayCart();
 
   
